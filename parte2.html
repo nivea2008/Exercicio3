@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<h2>Conversor de Palavra</h2>
+<button onclick="converterPalavra()">Digite uma Palavra</button>
+
+<pre id="resultado"></pre>
+
+<script>
+function converterPalavra() {
+    let palavra = prompt("Digite uma palavra:");
+    if (!palavra) return;
+
+    let invertida = palavra.split("").reverse().join("");
+    let resultado = "";
+
+    for (let i = 0; i < invertida.length; i++) {
+        let letra = invertida[i];
+        // Alternar maiúscula e minúscula começando com maiúscula
+        if (i % 2 === 0) {
+            resultado += letra.toUpperCase() + "\n";
+        } else {
+            resultado += letra.toLowerCase() + "\n";
+        }
+    }
+
+    document.getElementById("resultado").textContent = resultado;
+}
+</script>
+
+</body>
+</html>
